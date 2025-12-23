@@ -1,16 +1,16 @@
 <form (ngSubmit)="calcular()">
     <div class="input-group">
         <label for="investimentoInicial">Investimento Inicial</label>
-        <input type="number" name="investimentoInicial" id="investimentoInicial" min="0" [(ngModel)]="investimentoInicial">
+        <input type="number" name="investimentoInicial" id="investimentoInicial" min="0" [(ngModel)]="inputsUsuario.investimentoInicial">
         <label for="investimentoAnual">Investimento Anual</label>
-        <input type="number" name="investimentoAnual" id="investimentoAnual" min="0" [(ngModel)]="investimentoAnual">
+        <input type="number" name="investimentoAnual" id="investimentoAnual" min="0" [(ngModel)]="inputsUsuario.investimentoAnual">
     </div>
 
     <div class="input-group">
         <label for="retornoEsperado">Retorno Esperado</label>
-        <input type="number" name="retornoEsperado" id="retornoEsperado" min="0" [(ngModel)]="retornoEsperado">
+        <input type="number" name="retornoEsperado" id="retornoEsperado" min="0" [(ngModel)]="inputsUsuario.retornoEsperado">
         <label for="duracao">Duração em anos</label>
-        <input type="number" name="duracao" id="duracao" min="0" [(ngModel)]="duracao">
+        <input type="number" name="duracao" id="duracao" min="0" [(ngModel)]="inputsUsuario.duracao">
     </div>
     <button>Calcular</button>
 </form>

@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { inputINvestimento } from '../models/investimento.model';
 
 @Component({
-  selector: 'app-calculadora',
+  selector: 'app-inputs-usuario',
   imports: [FormsModule],
   templateUrl: './input-usuarios.html',
   styleUrl: './input-usuarios.css',
 })
 export class InputUsuarios {
-  investimentoInicial: number = 0
-  investimentoAnual: number = 0
-  retornoEsperado: number = 0
-  duracao: number = 0
+  @Output() novosInputsUsuario = new EventEmitter;
+
+  inputsUsuario: inputINvestimento = {
+    investimentoInicial: 0,
+    investimentoAnual: 0,
+    retornoEsperado: 0,
+    duracao: 0
+  }
 
   calcular() {
-    console.log(this.investimentoInicial, this.investimentoAnual, this.retornoEsperado, this.duracao)
+    this.novosInputsUsuario.emit(this.inputsUsuario)
   }
 }
