@@ -22,36 +22,36 @@ export class InvestimentoService {
     let duracaoEmAnos = input.duracao
     let anoAtual = new Date().getFullYear()
 
-    let retornoAnual: retornoInvestimento = {
+    let investimentoAno1: retornoInvestimento = {
       ano: 0, capitalInvestido: 0, jurosAnual: 0, jurosTotal: 0, valorInvestido: 0
     }
 
     //ano 1 tem um cálculo levemente diferente
     let ano = 1;
-    retornoAnual.ano = anoAtual + 1;
-    retornoAnual.capitalInvestido = investimentoInicial + aporteAnual
-    retornoAnual.jurosAnual = investimentoInicial * (taxaDeJuros / 100)
-    retornoAnual.jurosTotal = investimentoInicial * (taxaDeJuros / 100)
-    retornoAnual.valorInvestido = investimentoInicial + aporteAnual + investimentoInicial * (taxaDeJuros / 100)
-    this.resultados.push(retornoAnual)
+    investimentoAno1.ano = anoAtual + 1;
+    investimentoAno1.capitalInvestido = investimentoInicial + aporteAnual
+    investimentoAno1.jurosAnual = investimentoInicial * (taxaDeJuros / 100)
+    investimentoAno1.jurosTotal = investimentoInicial * (taxaDeJuros / 100)
+    investimentoAno1.valorInvestido = investimentoInicial + aporteAnual + investimentoInicial * (taxaDeJuros / 100)
+    this.resultados.push(investimentoAno1)
 
     ano += 1
     while (ano <= duracaoEmAnos) {
-      const anoAnterior = { ... this.resultados[this.resultados.length - 1] }
-      let capitalInvestido = anoAnterior.capitalInvestido + aporteAnual
-      let jurosAnual = anoAnterior.valorInvestido * (taxaDeJuros / 100)
-      let jurosTotal = anoAnterior.jurosTotal + jurosAnual
-      let valorInvestido = anoAnterior.valorInvestido + jurosAnual + aporteAnual
+      const investimentoAnoAnterior = { ... this.resultados[this.resultados.length - 1] }
+      let capitalInvestido = investimentoAnoAnterior.capitalInvestido + aporteAnual
+      let jurosAnual = investimentoAnoAnterior.valorInvestido * (taxaDeJuros / 100)
+      let jurosTotal = investimentoAnoAnterior.jurosTotal + jurosAnual
+      let valorInvestido = investimentoAnoAnterior.valorInvestido + jurosAnual + aporteAnual
 
 
-      let anoVigente: retornoInvestimento = {
+      let investimentoAnoVigente: retornoInvestimento = {
         ano: anoAtual + ano,
         capitalInvestido: capitalInvestido,
         jurosAnual: jurosAnual,
         jurosTotal: jurosTotal,
         valorInvestido: valorInvestido
       }
-      this.resultados.push(anoVigente)
+      this.resultados.push(investimentoAnoVigente)
       ano += 1
     }
 
