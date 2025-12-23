@@ -2,20 +2,21 @@
     <thead>
         <tr>
             <th> Ano</th>
-            <th> Valor Investido</th>
+            <th> Capital Investido</th>
             <th> Juros (anual)</th>
             <th> Juros totais</th>
-            <th> Capital Investido</th>
+            <th> Valor Investido</th>
         </tr>
     </thead>
     <tbody>
-        @for (investimento of listaDeInvestimentos; track investimento.ano) {}
-        <tr>
-            <td> 1</td>
-            <td> 3</td>
-            <td> 4</td>
-            <td> 5</td>
-            <td> 5</td>
-        </tr>
+        @for (investimento of listaDeInvestimentos; track investimento.ano) {
+            <tr>
+                <td> {{investimento.ano}} </td>
+                <td> {{investimento.capitalInvestido |currency: 'BRL':'symbol':'1.2-2'}}</td>
+                <td> {{investimento.jurosAnual |currency: 'BRL' : 'symbol':'1.2-2'}}</td>
+                <td> {{investimento.jurosTotal |currency: 'BRL' : 'symbol': '1.2-2'}}</td>
+                <td> {{investimento.valorInvestido |currency: 'BRL' : 'symbol': '1.2-2'}}</td>
+            </tr>
+        }
     </tbody>
 </table>
