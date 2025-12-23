@@ -1,8 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { InputUsuarios } from './input-usuarios/input-usuarios';
 import { CabecalhoComponent } from './cabecalho/cabecalho';
 import { ResultadosComponent } from './resultados/resultados';
-import { inputINvestimento } from './models/investimento.model';
+import { inputInvestimento } from './models/investimento.model';
 import { InvestimentoService } from './services/investimento.service';
 
 @Component({
@@ -16,8 +16,8 @@ export class App {
   constructor(private investimentoService: InvestimentoService){}
 
   protected readonly title = signal('investment-calculator');
-  calcularInvestimento(inputsInvestimento : inputINvestimento){
-    this.investimentoService.calcular()
+  calcularInvestimento(inputsInvestimento : inputInvestimento){
+    this.investimentoService.calcular(inputsInvestimento)
     console.log(this.investimentoService.getResultados)
   }
 }

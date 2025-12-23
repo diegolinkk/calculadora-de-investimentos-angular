@@ -1,4 +1,4 @@
-export type inputINvestimento = {
+export type inputInvestimento = {
     investimentoInicial: number
     investimentoAnual: number
     retornoEsperado: number
@@ -6,5 +6,9 @@ export type inputINvestimento = {
 }
 
 export type retornoInvestimento = {
-    
+    ano: number
+    valorInvestido: number,
+    jurosAnual: number,
+    jurosTotal: number,
+    capitalInvestido: number
 }

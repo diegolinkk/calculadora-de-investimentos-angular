@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { inputINvestimento } from '../models/investimento.model';
+import { inputInvestimento } from '../models/investimento.model';
 
 @Component({
   selector: 'app-inputs-usuario',
@@ -11,7 +11,7 @@ import { inputINvestimento } from '../models/investimento.model';
 export class InputUsuarios {
   @Output() novosInputsUsuario = new EventEmitter;
 
-  inputsUsuario: inputINvestimento = {
+  inputsUsuario: inputInvestimento = {
     investimentoInicial: 0,
     investimentoAnual: 0,
     retornoEsperado: 0,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InvestimentoService } from '../services/investimento.service';
 
 @Component({
   selector: 'app-resultados',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './resultados.css',
 })
 export class ResultadosComponent {
-
+  constructor(private investimentoService :InvestimentoService ){}
+  get listaDeInvestimentos(){
+    return this.investimentoService.getResultados
+  }
 }
