@@ -9,8 +9,8 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './resultados.css',
 })
 export class ResultadosComponent {
-  constructor(private investimentoService :InvestimentoService ){}
-  get listaDeInvestimentos(){
+  constructor(private investimentoService: InvestimentoService) { }
+  get listaDeInvestimentos() {
     return this.investimentoService.getResultados
   }
 }

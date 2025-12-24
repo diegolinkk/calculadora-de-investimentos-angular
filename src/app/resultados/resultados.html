@@ -10,13 +10,13 @@
     </thead>
     <tbody>
         @for (investimento of listaDeInvestimentos; track investimento.ano) {
-            <tr>
-                <td> {{investimento.ano}} </td>
-                <td> {{investimento.capitalInvestido |currency: 'BRL':'symbol':'1.2-2'}}</td>
-                <td> {{investimento.jurosAnual |currency: 'BRL' : 'symbol':'1.2-2'}}</td>
-                <td> {{investimento.jurosTotal |currency: 'BRL' : 'symbol': '1.2-2'}}</td>
-                <td> {{investimento.valorInvestido |currency: 'BRL' : 'symbol': '1.2-2'}}</td>
-            </tr>
+        <tr>
+            <td> {{investimento.ano}} </td>
+            <td> {{investimento.capitalInvestido |currency: 'BRL':'symbol':'1.2-2'}}</td>
+            <td> {{investimento.jurosAnual |currency: 'BRL' : 'symbol':'1.2-2'}}</td>
+            <td> {{investimento.jurosTotal |currency: 'BRL' : 'symbol': '1.2-2'}}</td>
+            <td> {{investimento.valorInvestido |currency: 'BRL' : 'symbol': '1.2-2'}}</td>
+        </tr>
         }
     </tbody>
 </table>

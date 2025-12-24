@@ -12,10 +12,10 @@ export class InputUsuarios {
   @Output() novosInputsUsuario = new EventEmitter;
 
   inputsUsuario: inputInvestimento = {
-    investimentoInicial: 1000,
-    investimentoAnual: 100,
-    retornoEsperado: 5.5,
-    duracao: 10
+    investimentoInicial: 0,
+    investimentoAnual: 0,
+    retornoEsperado: 0,
+    duracao: 0
   }
 
   calcular() {
